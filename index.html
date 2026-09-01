@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="GUJARAT TRADER Official Telegram Community"
+  >
+
+  <meta name="theme-color" content="#08111d">
+
+  <title>GUJARAT TRADER</title>
+
+
+  <!-- =========================================
+       META PIXEL BASE CODE
+       Only PageView Tracking
+  ========================================== -->
+
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+
+      n = f.fbq = function () {
+        n.callMethod
+          ? n.callMethod.apply(n, arguments)
+          : n.queue.push(arguments);
+      };
+
+      if (!f._fbq) {
+        f._fbq = n;
+      }
+
+      n.push = n;
+      n.loaded = true;
+      n.version = "2.0";
+      n.queue = [];
+
+      t = b.createElement(e);
+      t.async = true;
+      t.src = v;
+
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s);
+
+    }(
+      window,
+      document,
+      "script",
+      "https://connect.facebook.net/en_US/fbevents.js"
+    );
+
+    fbq("init", "1126433669952225");
+    fbq("track", "PageView");
+  </script>
+
+
+  <noscript>
+    <img
+      height="1"
+      width="1"
+      style="display:none"
+      src="https://www.facebook.com/tr?id=1126433669952225&ev=PageView&noscript=1"
+      alt=""
+    >
+  </noscript>
+
+
+  <style>
+
+    :root {
+      --background: #08111d;
+      --card: rgba(255, 255, 255, 0.06);
+      --border: rgba(255, 255, 255, 0.11);
+
+      --text: #f7f9fc;
+      --muted: #9baabd;
+
+      --blue: #299ee5;
+      --cyan: #55d4ff;
+      --purple: #8d73ff;
+      --green: #45df9d;
+    }
+
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+
+      font-family:
+        Inter,
+        Arial,
+        sans-serif;
+
+      color: var(--text);
+
+      background:
+        radial-gradient(
+          circle at 10% 5%,
+          rgba(41, 158, 229, 0.22),
+          transparent 30%
+        ),
+
+        radial-gradient(
+          circle at 90% 20%,
+          rgba(141, 115, 255, 0.18),
+          transparent 30%
+        ),
+
+        var(--background);
+    }
+
+
+    .page {
+      width: min(100%, 540px);
+
+      margin: 0 auto;
+
+      padding:
+        22px
+        16px
+        110px;
+    }
+
+
+    /* =============================
+       TOP BAR
+    ============================== */
+
+    .topbar {
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      padding-bottom: 28px;
+    }
+
+
+    .brand {
+      display: flex;
+
+      align-items: center;
+
+      gap: 9px;
+
+      color: #dce9f8;
+
+      font-size: 12px;
+      font-weight: 800;
+
+      letter-spacing: 0.8px;
+    }
+
+
+    .status-dot {
+      width: 9px;
+      height: 9px;
+
+      border-radius: 50%;
+
+      background: var(--green);
+
+      box-shadow:
+        0 0 14px
+        rgba(69, 223, 157, 0.85);
+    }
+
+
+    .official-badge {
+      padding:
+        7px
+        11px;
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius: 999px;
+
+      background:
+        rgba(255, 255, 255, 0.04);
+
+      color: #aab9cb;
+
+      font-size: 10px;
+      font-weight: 800;
+
+      letter-spacing: 1px;
+    }
+
+
+    /* =============================
+       HERO
+    ============================== */
+
+    .hero {
+      position: relative;
+
+      text-align: center;
+
+      padding:
+        5px
+        10px
+        25px;
+    }
+
+
+    .logo-wrapper {
+      width: 136px;
+      height: 136px;
+
+      margin:
+        0 auto
+        24px;
+
+      padding: 5px;
+
+      border-radius: 40px;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--cyan),
+          var(--blue),
+          var(--purple)
+        );
+
+      box-shadow:
+        0 24px 60px
+        rgba(41, 158, 229, 0.25);
+
+      transform:
+        rotate(-4deg);
+    }
+
+
+    .logo-wrapper img {
+      width: 100%;
+      height: 100%;
+
+      display: block;
+
+      object-fit: cover;
+
+      border-radius: 35px;
+
+      background: white;
+
+      transform:
+        rotate(4deg);
+    }
+
+
+    .eyebrow {
+      margin-bottom: 10px;
+
+      color: var(--cyan);
+
+      font-size: 11px;
+      font-weight: 900;
+
+      letter-spacing: 2px;
+    }
+
+
+    h1 {
+      margin-bottom: 15px;
+
+      font-size:
+        clamp(
+          40px,
+          10vw,
+          56px
+        );
+
+      line-height: 1;
+
+      letter-spacing: -2px;
+    }
+
+
+    h1 span {
+      background:
+        linear-gradient(
+          90deg,
+          #ffffff,
+          #b4eaff
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      color: transparent;
+    }
+
+
+    .hero-description {
+      max-width: 420px;
+
+      margin: 0 auto;
+
+      color: var(--muted);
+
+      font-size: 15px;
+
+      line-height: 1.7;
+    }
+
+
+    /* =============================
+       TELEGRAM BUTTON
+    ============================== */
+
+    .telegram-button {
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 10px;
+
+      width: 100%;
+
+      margin-top: 25px;
+
+      padding:
+        17px
+        20px;
+
+      border-radius: 18px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #299fda,
+          #1877b4
+        );
+
+      color: white;
+
+      text-decoration: none;
+
+      font-size: 16px;
+      font-weight: 800;
+
+      box-shadow:
+        0 16px 40px
+        rgba(34, 158, 217, 0.28);
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+
+    .telegram-button:hover {
+      transform:
+        translateY(-2px);
+    }
+
+
+    .telegram-icon {
+      width: 26px;
+      height: 26px;
+
+      display: grid;
+
+      place-items: center;
+
+      border-radius: 50%;
+
+      background:
+        rgba(255, 255, 255, 0.14);
+    }
+
+
+    .small-note {
+      margin-top: 10px;
+
+      color: #728198;
+
+      font-size: 11px;
+    }
+
+
+    /* =============================
+       STATS
+    ============================== */
+
+    .stats {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 10px;
+
+      margin:
+        28px 0
+        34px;
+    }
+
+
+    .stat {
+      padding:
+        16px
+        8px;
+
+      text-align: center;
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius: 18px;
+
+      background:
+        var(--card);
+    }
+
+
+    .stat strong {
+      display: block;
+
+      margin-bottom: 5px;
+
+      color: #bcecff;
+
+      font-size: 17px;
+    }
+
+
+    .stat span {
+      color: #8998ad;
+
+      font-size: 10px;
+    }
+
+
+    /* =============================
+       FEATURES
+    ============================== */
+
+    .section-title {
+      margin-bottom: 17px;
+
+      text-align: center;
+
+      font-size: 23px;
+
+      line-height: 1.35;
+    }
+
+
+    .section-title span {
+      color: var(--cyan);
+    }
+
+
+    .features {
+      display: grid;
+
+      gap: 11px;
+    }
+
+
+    .feature {
+      display: flex;
+
+      align-items: center;
+
+      gap: 14px;
+
+      padding: 17px;
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius: 20px;
+
+      background:
+        var(--card);
+    }
+
+
+    .feature-icon {
+      width: 47px;
+      height: 47px;
+
+      flex-shrink: 0;
+
+      display: grid;
+
+      place-items: center;
+
+      border-radius: 15px;
+
+      font-size: 21px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(85, 212, 255, 0.18),
+          rgba(141, 115, 255, 0.20)
+        );
+    }
+
+
+    .feature h3 {
+      margin-bottom: 5px;
+
+      font-size: 15px;
+    }
+
+
+    .feature p {
+      color: var(--muted);
+
+      font-size: 12px;
+
+      line-height: 1.55;
+    }
+
+
+    /* =============================
+       FINAL CTA
+    ============================== */
+
+    .final-cta {
+      margin-top: 25px;
+
+      padding: 20px;
+
+      text-align: center;
+
+      border:
+        1px solid
+        rgba(85, 212, 255, 0.16);
+
+      border-radius: 20px;
+
+      background:
+        rgba(85, 212, 255, 0.05);
+    }
+
+
+    .final-cta p {
+      margin-bottom: 13px;
+
+      color: #b5c4d8;
+
+      font-size: 13px;
+    }
+
+
+    .final-cta .telegram-button {
+      margin-top: 0;
+    }
+
+
+    /* =============================
+       FOOTER
+    ============================== */
+
+    footer {
+      margin-top: 30px;
+
+      padding:
+        20px
+        0
+        8px;
+
+      border-top:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+      text-align: center;
+
+      color: #65748a;
+
+      font-size: 11px;
+    }
+
+
+    /* =============================
+       STICKY TELEGRAM BUTTON
+    ============================== */
+
+    .sticky-button {
+      position: fixed;
+
+      left: 50%;
+      bottom: 14px;
+
+      z-index: 9999;
+
+      width:
+        min(
+          calc(100% - 28px),
+          512px
+        );
+
+      transform:
+        translateX(-50%);
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 9px;
+
+      padding:
+        15px
+        18px;
+
+      border:
+        1px solid
+        rgba(255, 255, 255, 0.18);
+
+      border-radius: 17px;
+
+      background:
+        rgba(34, 158, 217, 0.96);
+
+      color: white;
+
+      text-decoration: none;
+
+      font-size: 15px;
+      font-weight: 800;
+
+      box-shadow:
+        0 15px 38px
+        rgba(0, 0, 0, 0.35);
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <main class="page">
+
+
+    <!-- TOP BAR -->
+
+    <div class="topbar">
+
+      <div class="brand">
+        <span class="status-dot"></span>
+        GUJARAT TRADER
+      </div>
+
+      <div class="official-badge">
+        OFFICIAL
+      </div>
+
+    </div>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <div class="logo-wrapper">
+        <img
+          src="https://growwvix.pro/wp-content/uploads/2026/08/images-2.jpg"
+          alt="GUJARAT TRADER Logo"
+        >
+      </div>
+
+
+      <div class="eyebrow">
+        OFFICIAL COMMUNITY
+      </div>
+
+
+      <h1>
+        <span>GUJARAT TRADER</span>
+      </h1>
+
+
+      <p class="hero-description">
+        Join the official Telegram community and stay connected
+        with important updates and community information.
+      </p>
+
+
+      <a
+        class="telegram-button"
+        href="https://t.me/+zNhf6YbpN0g0Zjc1"
+      >
+        <span class="telegram-icon">✈</span>
+        Join Official Telegram
+      </a>
+
+
+      <div class="small-note">
+        One tap access • Official community
+      </div>
+
+    </section>
+
+
+    <!-- STATS -->
+
+    <section class="stats">
+
+      <div class="stat">
+        <strong>24/7</strong>
+        <span>Access</span>
+      </div>
+
+
+      <div class="stat">
+        <strong>⚡</strong>
+        <span>Updates</span>
+      </div>
+
+
+      <div class="stat">
+        <strong>✈</strong>
+        <span>Telegram</span>
+      </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+
+    <section>
+
+      <h2 class="section-title">
+        Stay connected.<br>
+        <span>Join the community.</span>
+      </h2>
+
+
+      <div class="features">
+
+
+        <article class="feature">
+
+          <div class="feature-icon">
+            📢
+          </div>
+
+          <div>
+            <h3>Latest Updates</h3>
+
+            <p>
+              Stay connected with important announcements
+              and community updates.
+            </p>
+          </div>
+
+        </article>
+
+
+        <article class="feature">
+
+          <div class="feature-icon">
+            👥
+          </div>
+
+          <div>
+            <h3>Official Community</h3>
+
+            <p>
+              Access the GUJARAT TRADER community through
+              the official Telegram channel.
+            </p>
+          </div>
+
+        </article>
+
+
+        <article class="feature">
+
+          <div class="feature-icon">
+            🚀
+          </div>
+
+          <div>
+            <h3>Instant Access</h3>
+
+            <p>
+              Open the official Telegram community directly
+              with a single click.
+            </p>
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- FINAL CTA -->
+
+    <section class="final-cta">
+
+      <p>
+        Ready to join the official GUJARAT TRADER community?
+      </p>
+
+
+      <a
+        class="telegram-button"
+        href="https://t.me/+zNhf6YbpN0g0Zjc1"
+      >
+        <span class="telegram-icon">✈</span>
+        Join Telegram Now
+      </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+      Official landing page • GUJARAT TRADER
+    </footer>
+
+
+  </main>
+
+
+  <!-- FIXED TELEGRAM BUTTON -->
+
+  <a
+    class="sticky-button"
+    href="https://t.me/+zNhf6YbpN0g0Zjc1"
+  >
+    ✈ Join Telegram Community
+  </a>
+
+
+</body>
+</html>
