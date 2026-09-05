@@ -1,593 +1,959 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Gujarati Trader | Official Telegram Community</title>
-
-  <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2564733584029031');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2564733584029031&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-  
-<style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-:root {
-      --bg: #091523;
-      --bg-light: #0e1c2c;
-      --card: #172331;
-      --card-2: #1b2938;
-      --border: rgba(130, 168, 200, 0.20);
-      --text: #f2f5f8;
-      --muted: #a5b6c9;
-      --blue: #4db8ef;
-      --blue-dark: #2674a4;
-    }
-body {
-      font-family:
-        Inter, ui-sans-serif, system-ui, -apple-system,
-        BlinkMacSystemFont, "Segoe UI", sans-serif;
-min-height: 100vh;
-      color: var(--text);
-      background:
-        radial-gradient(
-          circle at 50% 10%,
-          rgba(35, 87, 122, 0.28),
-          transparent 32%
-        ),
-        radial-gradient(
-          circle at 85% 40%,
-          rgba(62, 51, 112, 0.12),
-          transparent 30%
-        ),
-        var(--bg);
-overflow-x: hidden;
-    }
-a {
-      text-decoration: none;
-    }
-.page {
-      width: 100%;
-      min-height: 100vh;
-      padding: 24px 20px 50px;
-    }
-.container {
-      width: 100%;
-      max-width: 620px;
-      margin: auto;
-    }
-/* TOP BAR */
-.topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 34px;
-    }
-.brand-small {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-    }
-.status-dot {
-      width: 9px;
-      height: 9px;
-      background: #54d7a4;
-      border-radius: 50%;
-      box-shadow: 0 0 14px #54d7a4;
-    }
-.official-badge {
-      font-size: 10px;
-      letter-spacing: 1px;
-      font-weight: 800;
-      padding: 8px 14px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      color: #b8c6d5;
-      background: rgba(255,255,255,0.025);
-    }
-/* HERO */
-.hero {
-      text-align: center;
-    }
-.logo-box {
-      width: 140px;
-      height: 140px;
-      margin: 0 auto 26px;
-padding: 7px;
-      border-radius: 38px;
-background:
-        linear-gradient(
-          135deg,
-          rgba(85, 198, 255, 0.9),
-          rgba(255, 255, 255, 0.9),
-          rgba(126, 112, 255, 0.9)
-        );
-box-shadow:
-        0 0 0 1px rgba(255,255,255,0.06),
-        0 20px 50px rgba(40, 150, 220, 0.18);
-    }
-.logo-box-inner {
-      width: 100%;
-      height: 100%;
-      border-radius: 32px;
-      overflow: hidden;
-      background: #fff;
-    }
-.logo-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: block;
-    }
-.eyebrow {
-      color: #69c5f2;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 3px;
-      margin-bottom: 10px;
-    }
-h1 {
-      font-size: clamp(42px, 8vw, 62px);
-      line-height: 0.95;
-      letter-spacing: -2px;
-      font-weight: 850;
-      margin-bottom: 20px;
-background: linear-gradient(
-        90deg,
-        #ffffff,
-        #dcecf7,
-        #9dd4f0
-      );
--webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-.subtitle {
-      max-width: 500px;
-      margin: auto;
-      color: #b3c0cf;
-      font-size: 15px;
-      line-height: 1.8;
-    }
-/* BUTTON */
-.telegram-btn {
-      width: 100%;
-      margin-top: 28px;
-      min-height: 58px;
-display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 13px;
-border-radius: 18px;
-color: white;
-      font-size: 17px;
-      font-weight: 800;
-      letter-spacing: 0.2px;
-background:
-        linear-gradient(
-          135deg,
-          #4da6d2,
-          #2874a8
-        );
-box-shadow:
-        0 14px 35px rgba(31, 126, 184, 0.25);
-transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        filter 0.2s ease;
-    }
-.telegram-btn:hover {
-      transform: translateY(-2px);
-      filter: brightness(1.08);
-      box-shadow:
-        0 18px 42px rgba(31, 126, 184, 0.38);
-    }
-.telegram-icon {
-      width: 31px;
-      height: 31px;
-      border-radius: 50%;
-display: grid;
-      place-items: center;
-background: rgba(255,255,255,0.13);
-      font-size: 18px;
-    }
-.one-tap {
-      text-align: center;
-      margin-top: 10px;
-      color: #8093a7;
-      font-size: 12px;
-    }
-/* STATS */
-.stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-top: 46px;
-    }
-.stat-card {
-      min-height: 80px;
-border:
-        1px solid var(--border);
-border-radius: 18px;
-background:
-        linear-gradient(
-          145deg,
-          rgba(33, 47, 62, 0.9),
-          rgba(26, 38, 51, 0.85)
-        );
-display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 7px;
-    }
-.stat-number {
-      font-size: 16px;
-      font-weight: 850;
-      color: #b8ddf4;
-    }
-.stat-label {
-      font-size: 11px;
-      color: #8fa2b7;
-    }
-/* SECTION */
-.section-title {
-      text-align: center;
-      margin: 34px 0 20px;
-    }
-.section-title h2 {
-      font-size: 24px;
-      line-height: 1.35;
-      font-weight: 800;
-    }
-.section-title span {
-      color: #70c9f5;
-    }
-/* FEATURE CARDS */
-.features {
-      display: grid;
-      gap: 12px;
-    }
-.feature-card {
-      padding: 17px;
-display: flex;
-      align-items: center;
-      gap: 16px;
-border-radius: 21px;
-background:
-        linear-gradient(
-          145deg,
-          rgba(31, 45, 59, 0.95),
-          rgba(26, 38, 50, 0.95)
-        );
-border: 1px solid var(--border);
-    }
-.feature-icon {
-      width: 50px;
-      height: 50px;
-      flex: 0 0 50px;
-border-radius: 15px;
-display: grid;
-      place-items: center;
-font-size: 22px;
-background:
-        linear-gradient(
-          135deg,
-          #30485e,
-          #28334f
-        );
-    }
-.feature-content h3 {
-      font-size: 15px;
-      margin-bottom: 5px;
-    }
-.feature-content p {
-      font-size: 12px;
-      line-height: 1.6;
-      color: #a8b8c8;
-    }
-/* CTA BOX */
-.cta-box {
-      margin-top: 25px;
-      padding: 18px;
-border-radius: 22px;
-background:
-        linear-gradient(
-          145deg,
-          rgba(18, 43, 58, 0.92),
-          rgba(17, 32, 45, 0.9)
-        );
-border: 1px solid rgba(66, 167, 218, 0.3);
-    }
-.cta-question {
-      text-align: center;
-      font-size: 13px;
-      color: #b6c7d7;
-      margin-bottom: 12px;
-    }
-.cta-box .telegram-btn {
-      margin-top: 0;
-    }
-/* AGENCY */
-.agency-card {
-      margin-top: 28px;
-      padding: 3px;
-border-radius: 24px;
-background:
-        linear-gradient(
-          100deg,
-          #ffbd62,
-          #ff8d9d,
-          #8f73ff
-        );
-box-shadow:
-        0 14px 40px rgba(110, 70, 170, 0.12);
-    }
-.agency-inner {
-      padding: 28px 20px;
-text-align: center;
-      border-radius: 21px;
-background:
-        linear-gradient(
-          145deg,
-          #151d2c,
-          #111827
-        );
-    }
-.agency-label {
-      font-size: 11px;
-      letter-spacing: 3px;
-      font-weight: 850;
-      color: #ffd08c;
-      margin-bottom: 8px;
-    }
-.agency-inner h3 {
-      font-size: 27px;
-      line-height: 1.35;
-      margin-bottom: 10px;
-    }
-.gradient-text {
-      background:
-        linear-gradient(
-          90deg,
-          #72c9f5,
-          #a6a4ff,
-          #ffb47e
-        );
--webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-.agency-inner p {
-      max-width: 400px;
-      margin: auto;
-color: #a9b9ca;
-      font-size: 13px;
-      line-height: 1.7;
-    }
-/* FOOTER */
-footer {
-      margin-top: 28px;
-      padding-top: 20px;
-border-top:
-        1px solid rgba(150, 170, 190, 0.12);
-text-align: center;
-color: #74879b;
-      font-size: 11px;
-    }
-/* MOBILE */
-@media (max-width: 520px) {
-      .page {
-        padding: 20px 14px 40px;
-      }
-.topbar {
-        margin-bottom: 28px;
-      }
-.brand-small {
-        font-size: 11px;
-      }
-.official-badge {
-        padding: 7px 10px;
-        font-size: 9px;
-      }
-.logo-box {
-        width: 120px;
-        height: 120px;
-        border-radius: 34px;
-      }
-.logo-box-inner {
-        border-radius: 28px;
-      }
-h1 {
-        font-size: 42px;
-      }
-.subtitle {
-        font-size: 14px;
-      }
-.telegram-btn {
-        font-size: 15px;
-      }
-.stats {
-        gap: 7px;
-      }
-.stat-card {
-        min-height: 72px;
-      }
-.section-title h2 {
-        font-size: 22px;
-      }
-.agency-inner h3 {
-        font-size: 23px;
-      }
-    }
-  </style>
-</head>
-<body>
-<main class="page">
-<div class="container">
-<!-- TOP -->
-<div class="topbar">
-<div class="brand-small">
-          <span class="status-dot"></span>
-          <span>Gujarati Trader</span>
-        </div>
-<div class="official-badge">
-          OFFICIAL
-        </div>
-</div>
-<!-- HERO -->
-<section class="hero">
-<div class="logo-box">
-          <div class="logo-box-inner">
-            <img
-              src="[https://growwvix.pro/wp-content/uploads/2026/08/images-2.jpg](https://growwvix.pro/wp-content/uploads/2026/08/images-2.jpg)"
-              alt="Gujarati Trader Logo"
-            />
-          </div>
-        </div>
-<div class="eyebrow">
-          OFFICIAL COMMUNITY
-        </div>
-<h1>GUJARATI TRADER</h1>
-<p class="subtitle">
-          Join the official Telegram community and stay connected
-          with important updates and community information.
-        </p>
-<!-- MAIN TELEGRAM BUTTON -->
-<a
-          href="https://telegram.me/+zNhf6YbpN0g0Zjc1"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="telegram-btn"
-        >
-          <span class="telegram-icon">✈</span>
-          Join Official Telegram
-        </a>
-<div class="one-tap">
-          One tap access • Official community
-        </div>
-</section>
-<!-- STATS -->
-<section class="stats">
-<div class="stat-card">
-          <div class="stat-number">24/7</div>
-          <div class="stat-label">Access</div>
-        </div>
-<div class="stat-card">
-          <div class="stat-number">⚡</div>
-          <div class="stat-label">Updates</div>
-        </div>
-<div class="stat-card">
-          <div class="stat-number">✈</div>
-          <div class="stat-label">Telegram</div>
-        </div>
-</section>
-<!-- COMMUNITY SECTION -->
-<section>
-<div class="section-title">
-          <h2>
-            Stay connected.<br />
-            <span>Join the community.</span>
-          </h2>
-        </div>
-<div class="features">
-<div class="feature-card">
-<div class="feature-icon">
-              📢
-            </div>
-<div class="feature-content">
-              <h3>Latest Updates</h3>
-<p>
-                Stay connected with important announcements
-                and community updates.
-              </p>
-            </div>
-</div>
-<div class="feature-card">
-<div class="feature-icon">
-              👥
-            </div>
-<div class="feature-content">
-              <h3>Official Community</h3>
-<p>
-                Access the GUJARATI TRADER community through
-                the official Telegram channel.
-              </p>
-            </div>
-</div>
-<div class="feature-card">
-<div class="feature-icon">
-              🚀
-            </div>
-<div class="feature-content">
-              <h3>Instant Access</h3>
-<p>
-                Open the official Telegram community directly
-                with a single click.
-              </p>
-            </div>
-</div>
-</div>
-<!-- SECOND CTA -->
-<div class="cta-box">
-<div class="cta-question">
-            Ready to join the official GUJARATI TRADER community?
-          </div>
-<a
-            href="https://telegram.me/+zNhf6YbpN0g0Zjc1"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="telegram-btn"
-          >
-            <span class="telegram-icon">✈</span>
-            Join Telegram Now
-          </a>
-</div>
-</section>
-<!-- AGENCY CARD -->
-<section class="agency-card">
-<div class="agency-inner">
-<div class="agency-label">
-            ADS & GROWTH SUPPORT
-          </div>
-<h3>
-            Ads managed by<br />
-<span class="gradient-text">
-              Kirtnix Digital Agency
-            </span>
-          </h3>
-<p>
-            Professional growth support and
-            digital marketing experiences.
-          </p>
-</div>
-</section>
-<!-- FOOTER -->
-<footer>
-        Official landing page • GUJARATI TRADER
-      </footer>
-</div>
-</main>
-</body>
-</html>
+| <!DOCTYPE html>                                                                                                                                 |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| <html lang="en">                                                                                                                                |
+| <head>                                                                                                                                          |
+|   <meta charset="UTF-8" />                                                                                                                      |
+|   <meta name="viewport" content="width=device-width, initial-scale=1.0" />                                                                      |
+| 
+                                                                                                                                             |
+|   <title>Gujarati Trader \| Official Telegram Community</title>                                                                                |
+| 
+                                                                                                                                             |
+|   <!-- Meta Pixel Code -->                                                                                                                      |
+| <script>                                                                                                                                        |
+| !function(f,b,e,v,n,t,s)                                                                                                                         |
+| {if(f.fbq)return;n=f.fbq=function(){n.callMethod?                                                                                                |
+| n.callMethod.apply(n,arguments):n.queue.push(arguments)};                                                                                       |
+| if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';                                                                                      |
+| n.queue=[];t=b.createElement(e);t.async=!0;                                                                                                      |
+| t.src=v;s=b.getElementsByTagName(e)[0];                                                                                                          |
+| s.parentNode.insertBefore(t,s)}(window, document,'script',                                                                                       |
+| 'https://connect.facebook.net/en_US/fbevents.js');                                                                                             |
+| fbq('init', '2564733584029031');                                                                                                                 |
+| fbq('track', 'PageView');                                                                                                                        |
+| </script>                                                                                                                                       |
+| <noscript><img height="1" width="1" style="display:none"                                                                                      |
+| src="https://www.facebook.com/tr?id=2564733584029031&ev=PageView&noscript=1"                                                                   |
+| /></noscript>                                                                                                                                   |
+| <!-- End Meta Pixel Code -->                                                                                                                    |
+| 
+                                                                                                                                             |
+|   <style>                                                                                                                                       |
+|     \* {                                                                                                                                         |
+|       margin: 0;                                                                                                                                 |
+|       padding: 0;                                                                                                                                |
+|       box-sizing: border-box;                                                                                                                    |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     :root {                                                                                                                                     |
+|       --bg: #091523;                                                                                                                             |
+|       --bg-light: #0e1c2c;                                                                                                                       |
+|       --card: #172331;                                                                                                                           |
+|       --card-2: #1b2938;                                                                                                                         |
+|       --border: rgba(130, 168, 200, 0.20);                                                                                                       |
+|       --text: #f2f5f8;                                                                                                                           |
+|       --muted: #a5b6c9;                                                                                                                          |
+|       --blue: #4db8ef;                                                                                                                           |
+|       --blue-dark: #2674a4;                                                                                                                      |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     body {                                                                                                                                       |
+|       font-family:                                                                                                                               |
+|         Inter, ui-sans-serif, system-ui, -apple-system,                                                                                          |
+|         BlinkMacSystemFont, "Segoe UI", sans-serif;                                                                                              |
+| 
+                                                                                                                                             |
+|       min-height: 100vh;                                                                                                                         |
+|       color: var(--text);                                                                                                                        |
+|       background:                                                                                                                                |
+|         radial-gradient(                                                                                                                         |
+|           circle at 50% 10%,                                                                                                                     |
+|           rgba(35, 87, 122, 0.28),                                                                                                               |
+|           transparent 32%                                                                                                                        |
+|         ),                                                                                                                                       |
+|         radial-gradient(                                                                                                                         |
+|           circle at 85% 40%,                                                                                                                     |
+|           rgba(62, 51, 112, 0.12),                                                                                                               |
+|           transparent 30%                                                                                                                        |
+|         ),                                                                                                                                       |
+|         var(--bg);                                                                                                                               |
+| 
+                                                                                                                                             |
+|       overflow-x: hidden;                                                                                                                        |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     a {                                                                                                                                          |
+|       text-decoration: none;                                                                                                                     |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     .page {                                                                                                                                      |
+|       width: 100%;                                                                                                                               |
+|       min-height: 100vh;                                                                                                                         |
+|       padding: 24px 20px 50px;                                                                                                                   |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     .container {                                                                                                                                 |
+|       width: 100%;                                                                                                                               |
+|       max-width: 620px;                                                                                                                          |
+|       margin: auto;                                                                                                                              |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     /\* TOP BAR \*/                                                                                                                              |
+| 
+                                                                                                                                             |
+|     .topbar {                                                                                                                                    |
+|       display: flex;                                                                                                                             |
+|       justify-content: space-between;                                                                                                            |
+|       align-items: center;                                                                                                                       |
+|       margin-bottom: 34px;                                                                                                                       |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     .brand-small {                                                                                                                               |
+|       display: flex;                                                                                                                             |
+|       align-items: center;                                                                                                                       |
+|       gap: 10px;                                                                                                                                 |
+|       font-size: 13px;                                                                                                                           |
+|       font-weight: 800;                                                                                                                          |
+|       letter-spacing: 1.2px;                                                                                                                     |
+|       text-transform: uppercase;                                                                                                                 |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     .status-dot {                                                                                                                                |
+|       width: 9px;                                                                                                                                |
+|       height: 9px;                                                                                                                               |
+|       background: #54d7a4;                                                                                                                       |
+|       border-radius: 50%;                                                                                                                        |
+|       box-shadow: 0 0 14px #54d7a4;                                                                                                              |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     .official-badge {                                                                                                                            |
+|       font-size: 10px;                                                                                                                           |
+|       letter-spacing: 1px;                                                                                                                       |
+|       font-weight: 800;                                                                                                                          |
+|       padding: 8px 14px;                                                                                                                         |
+|       border-radius: 999px;                                                                                                                      |
+|       border: 1px solid var(--border);                                                                                                           |
+|       color: #b8c6d5;                                                                                                                            |
+|       background: rgba(255,255,255,0.025);                                                                                                       |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     /\* HERO \*/                                                                                                                                 |
+| 
+                                                                                                                                             |
+|     .hero {                                                                                                                                      |
+|       text-align: center;                                                                                                                        |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     .logo-box {                                                                                                                                  |
+|       width: 140px;                                                                                                                              |
+|       height: 140px;                                                                                                                             |
+|       margin: 0 auto 26px;                                                                                                                       |
+| 
+                                                                                                                                             |
+|       padding: 7px;                                                                                                                              |
+|       border-radius: 38px;                                                                                                                       |
+| 
+                                                                                                                                             |
+|       background:                                                                                                                                |
+|         linear-gradient(                                                                                                                         |
+|           135deg,                                                                                                                                |
+|           rgba(85, 198, 255, 0.9),                                                                                                               |
+|           rgba(255, 255, 255, 0.9),                                                                                                              |
+|           rgba(126, 112, 255, 0.9)                                                                                                               |
+|         );                                                                                                                                       |
+| 
+                                                                                                                                             |
+|       box-shadow:                                                                                                                                |
+|         0 0 0 1px rgba(255,255,255,0.06),                                                                                                        |
+|         0 20px 50px rgba(40, 150, 220, 0.18);                                                                                                    |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     .logo-box-inner {                                                                                                                            |
+|       width: 100%;                                                                                                                               |
+|       height: 100%;                                                                                                                              |
+|       border-radius: 32px;                                                                                                                       |
+|       overflow: hidden;                                                                                                                          |
+|       background: #fff;                                                                                                                          |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     .logo-box img {                                                                                                                              |
+|       width: 100%;                                                                                                                               |
+|       height: 100%;                                                                                                                              |
+|       object-fit: contain;                                                                                                                       |
+|       display: block;                                                                                                                            |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     .eyebrow {                                                                                                                                   |
+|       color: #69c5f2;                                                                                                                            |
+|       font-size: 12px;                                                                                                                           |
+|       font-weight: 800;                                                                                                                          |
+|       letter-spacing: 3px;                                                                                                                       |
+|       margin-bottom: 10px;                                                                                                                       |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     h1 {                                                                                                                                         |
+|       font-size: clamp(42px, 8vw, 62px);                                                                                                         |
+|       line-height: 0.95;                                                                                                                         |
+|       letter-spacing: -2px;                                                                                                                      |
+|       font-weight: 850;                                                                                                                          |
+|       margin-bottom: 20px;                                                                                                                       |
+| 
+                                                                                                                                             |
+|       background: linear-gradient(                                                                                                               |
+|         90deg,                                                                                                                                   |
+|         #ffffff,                                                                                                                                 |
+|         #dcecf7,                                                                                                                                 |
+|         #9dd4f0                                                                                                                                  |
+|       );                                                                                                                                         |
+| 
+                                                                                                                                             |
+|       -webkit-background-clip: text;                                                                                                             |
+|       -webkit-text-fill-color: transparent;                                                                                                      |
+|       background-clip: text;                                                                                                                     |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     .subtitle {                                                                                                                                  |
+|       max-width: 500px;                                                                                                                          |
+|       margin: auto;                                                                                                                              |
+|       color: #b3c0cf;                                                                                                                            |
+|       font-size: 15px;                                                                                                                           |
+|       line-height: 1.8;                                                                                                                          |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     /\* BUTTON \*/                                                                                                                               |
+| 
+                                                                                                                                             |
+|     .telegram-btn {                                                                                                                              |
+|       width: 100%;                                                                                                                               |
+|       margin-top: 28px;                                                                                                                          |
+|       min-height: 58px;                                                                                                                          |
+| 
+                                                                                                                                             |
+|       display: flex;                                                                                                                             |
+|       align-items: center;                                                                                                                       |
+|       justify-content: center;                                                                                                                   |
+|       gap: 13px;                                                                                                                                 |
+| 
+                                                                                                                                             |
+|       border-radius: 18px;                                                                                                                       |
+| 
+                                                                                                                                             |
+|       color: white;                                                                                                                              |
+|       font-size: 17px;                                                                                                                           |
+|       font-weight: 800;                                                                                                                          |
+|       letter-spacing: 0.2px;                                                                                                                     |
+| 
+                                                                                                                                             |
+|       background:                                                                                                                                |
+|         linear-gradient(                                                                                                                         |
+|           135deg,                                                                                                                                |
+|           #4da6d2,                                                                                                                               |
+|           #2874a8                                                                                                                                |
+|         );                                                                                                                                       |
+| 
+                                                                                                                                             |
+|       box-shadow:                                                                                                                                |
+|         0 14px 35px rgba(31, 126, 184, 0.25);                                                                                                    |
+| 
+                                                                                                                                             |
+|       transition:                                                                                                                                |
+|         transform 0.2s ease,                                                                                                                     |
+|         box-shadow 0.2s ease,                                                                                                                    |
+|         filter 0.2s ease;                                                                                                                        |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     .telegram-btn:hover {                                                                                                                       |
+|       transform: translateY(-2px);                                                                                                               |
+|       filter: brightness(1.08);                                                                                                                  |
+|       box-shadow:                                                                                                                                |
+|         0 18px 42px rgba(31, 126, 184, 0.38);                                                                                                    |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     .telegram-icon {                                                                                                                             |
+|       width: 31px;                                                                                                                               |
+|       height: 31px;                                                                                                                              |
+|       border-radius: 50%;                                                                                                                        |
+| 
+                                                                                                                                             |
+|       display: grid;                                                                                                                             |
+|       place-items: center;                                                                                                                       |
+| 
+                                                                                                                                             |
+|       background: rgba(255,255,255,0.13);                                                                                                        |
+|       font-size: 18px;                                                                                                                           |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     .one-tap {                                                                                                                                   |
+|       text-align: center;                                                                                                                        |
+|       margin-top: 10px;                                                                                                                          |
+|       color: #8093a7;                                                                                                                            |
+|       font-size: 12px;                                                                                                                           |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     /\* STATS \*/                                                                                                                                |
+| 
+                                                                                                                                             |
+|     .stats {                                                                                                                                     |
+|       display: grid;                                                                                                                             |
+|       grid-template-columns: repeat(3, 1fr);                                                                                                     |
+|       gap: 10px;                                                                                                                                 |
+|       margin-top: 46px;                                                                                                                          |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     .stat-card {                                                                                                                                 |
+|       min-height: 80px;                                                                                                                          |
+| 
+                                                                                                                                             |
+|       border:                                                                                                                                    |
+|         1px solid var(--border);                                                                                                                 |
+| 
+                                                                                                                                             |
+|       border-radius: 18px;                                                                                                                       |
+| 
+                                                                                                                                             |
+|       background:                                                                                                                                |
+|         linear-gradient(                                                                                                                         |
+|           145deg,                                                                                                                                |
+|           rgba(33, 47, 62, 0.9),                                                                                                                 |
+|           rgba(26, 38, 51, 0.85)                                                                                                                 |
+|         );                                                                                                                                       |
+| 
+                                                                                                                                             |
+|       display: flex;                                                                                                                             |
+|       flex-direction: column;                                                                                                                    |
+|       align-items: center;                                                                                                                       |
+|       justify-content: center;                                                                                                                   |
+|       gap: 7px;                                                                                                                                  |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     .stat-number {                                                                                                                               |
+|       font-size: 16px;                                                                                                                           |
+|       font-weight: 850;                                                                                                                          |
+|       color: #b8ddf4;                                                                                                                            |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     .stat-label {                                                                                                                                |
+|       font-size: 11px;                                                                                                                           |
+|       color: #8fa2b7;                                                                                                                            |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     /\* SECTION \*/                                                                                                                              |
+| 
+                                                                                                                                             |
+|     .section-title {                                                                                                                             |
+|       text-align: center;                                                                                                                        |
+|       margin: 34px 0 20px;                                                                                                                       |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     .section-title h2 {                                                                                                                          |
+|       font-size: 24px;                                                                                                                           |
+|       line-height: 1.35;                                                                                                                         |
+|       font-weight: 800;                                                                                                                          |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     .section-title span {                                                                                                                        |
+|       color: #70c9f5;                                                                                                                            |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     /\* FEATURE CARDS \*/                                                                                                                        |
+| 
+                                                                                                                                             |
+|     .features {                                                                                                                                  |
+|       display: grid;                                                                                                                             |
+|       gap: 12px;                                                                                                                                 |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     .feature-card {                                                                                                                              |
+|       padding: 17px;                                                                                                                             |
+| 
+                                                                                                                                             |
+|       display: flex;                                                                                                                             |
+|       align-items: center;                                                                                                                       |
+|       gap: 16px;                                                                                                                                 |
+| 
+                                                                                                                                             |
+|       border-radius: 21px;                                                                                                                       |
+| 
+                                                                                                                                             |
+|       background:                                                                                                                                |
+|         linear-gradient(                                                                                                                         |
+|           145deg,                                                                                                                                |
+|           rgba(31, 45, 59, 0.95),                                                                                                                |
+|           rgba(26, 38, 50, 0.95)                                                                                                                 |
+|         );                                                                                                                                       |
+| 
+                                                                                                                                             |
+|       border: 1px solid var(--border);                                                                                                           |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     .feature-icon {                                                                                                                              |
+|       width: 50px;                                                                                                                               |
+|       height: 50px;                                                                                                                              |
+|       flex: 0 0 50px;                                                                                                                            |
+| 
+                                                                                                                                             |
+|       border-radius: 15px;                                                                                                                       |
+| 
+                                                                                                                                             |
+|       display: grid;                                                                                                                             |
+|       place-items: center;                                                                                                                       |
+| 
+                                                                                                                                             |
+|       font-size: 22px;                                                                                                                           |
+| 
+                                                                                                                                             |
+|       background:                                                                                                                                |
+|         linear-gradient(                                                                                                                         |
+|           135deg,                                                                                                                                |
+|           #30485e,                                                                                                                               |
+|           #28334f                                                                                                                                |
+|         );                                                                                                                                       |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     .feature-content h3 {                                                                                                                        |
+|       font-size: 15px;                                                                                                                           |
+|       margin-bottom: 5px;                                                                                                                        |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     .feature-content p {                                                                                                                         |
+|       font-size: 12px;                                                                                                                           |
+|       line-height: 1.6;                                                                                                                          |
+|       color: #a8b8c8;                                                                                                                            |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     /\* CTA BOX \*/                                                                                                                              |
+| 
+                                                                                                                                             |
+|     .cta-box {                                                                                                                                   |
+|       margin-top: 25px;                                                                                                                          |
+|       padding: 18px;                                                                                                                             |
+| 
+                                                                                                                                             |
+|       border-radius: 22px;                                                                                                                       |
+| 
+                                                                                                                                             |
+|       background:                                                                                                                                |
+|         linear-gradient(                                                                                                                         |
+|           145deg,                                                                                                                                |
+|           rgba(18, 43, 58, 0.92),                                                                                                                |
+|           rgba(17, 32, 45, 0.9)                                                                                                                  |
+|         );                                                                                                                                       |
+| 
+                                                                                                                                             |
+|       border: 1px solid rgba(66, 167, 218, 0.3);                                                                                                 |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     .cta-question {                                                                                                                              |
+|       text-align: center;                                                                                                                        |
+|       font-size: 13px;                                                                                                                           |
+|       color: #b6c7d7;                                                                                                                            |
+|       margin-bottom: 12px;                                                                                                                       |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     .cta-box .telegram-btn {                                                                                                                     |
+|       margin-top: 0;                                                                                                                             |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     /\* AGENCY \*/                                                                                                                               |
+| 
+                                                                                                                                             |
+|     .agency-card {                                                                                                                               |
+|       margin-top: 28px;                                                                                                                          |
+|       padding: 3px;                                                                                                                              |
+| 
+                                                                                                                                             |
+|       border-radius: 24px;                                                                                                                       |
+| 
+                                                                                                                                             |
+|       background:                                                                                                                                |
+|         linear-gradient(                                                                                                                         |
+|           100deg,                                                                                                                                |
+|           #ffbd62,                                                                                                                               |
+|           #ff8d9d,                                                                                                                               |
+|           #8f73ff                                                                                                                                |
+|         );                                                                                                                                       |
+| 
+                                                                                                                                             |
+|       box-shadow:                                                                                                                                |
+|         0 14px 40px rgba(110, 70, 170, 0.12);                                                                                                    |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     .agency-inner {                                                                                                                              |
+|       padding: 28px 20px;                                                                                                                        |
+| 
+                                                                                                                                             |
+|       text-align: center;                                                                                                                        |
+|       border-radius: 21px;                                                                                                                       |
+| 
+                                                                                                                                             |
+|       background:                                                                                                                                |
+|         linear-gradient(                                                                                                                         |
+|           145deg,                                                                                                                                |
+|           #151d2c,                                                                                                                               |
+|           #111827                                                                                                                                |
+|         );                                                                                                                                       |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     .agency-label {                                                                                                                              |
+|       font-size: 11px;                                                                                                                           |
+|       letter-spacing: 3px;                                                                                                                       |
+|       font-weight: 850;                                                                                                                          |
+|       color: #ffd08c;                                                                                                                            |
+|       margin-bottom: 8px;                                                                                                                        |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     .agency-inner h3 {                                                                                                                           |
+|       font-size: 27px;                                                                                                                           |
+|       line-height: 1.35;                                                                                                                         |
+|       margin-bottom: 10px;                                                                                                                       |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     .gradient-text {                                                                                                                             |
+|       background:                                                                                                                                |
+|         linear-gradient(                                                                                                                         |
+|           90deg,                                                                                                                                 |
+|           #72c9f5,                                                                                                                               |
+|           #a6a4ff,                                                                                                                               |
+|           #ffb47e                                                                                                                                |
+|         );                                                                                                                                       |
+| 
+                                                                                                                                             |
+|       -webkit-background-clip: text;                                                                                                             |
+|       -webkit-text-fill-color: transparent;                                                                                                      |
+|       background-clip: text;                                                                                                                     |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     .agency-inner p {                                                                                                                            |
+|       max-width: 400px;                                                                                                                          |
+|       margin: auto;                                                                                                                              |
+| 
+                                                                                                                                             |
+|       color: #a9b9ca;                                                                                                                            |
+|       font-size: 13px;                                                                                                                           |
+|       line-height: 1.7;                                                                                                                          |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     /\* FOOTER \*/                                                                                                                               |
+| 
+                                                                                                                                             |
+|     footer {                                                                                                                                     |
+|       margin-top: 28px;                                                                                                                          |
+|       padding-top: 20px;                                                                                                                         |
+| 
+                                                                                                                                             |
+|       border-top:                                                                                                                                |
+|         1px solid rgba(150, 170, 190, 0.12);                                                                                                     |
+| 
+                                                                                                                                             |
+|       text-align: center;                                                                                                                        |
+| 
+                                                                                                                                             |
+|       color: #74879b;                                                                                                                            |
+|       font-size: 11px;                                                                                                                           |
+|     }                                                                                                                                            |
+| 
+                                                                                                                                             |
+|     /\* MOBILE \*/                                                                                                                               |
+| 
+                                                                                                                                             |
+|     @media (max-width: 520px) {                                                                                                                  |
+|       .page {                                                                                                                                    |
+|         padding: 20px 14px 40px;                                                                                                                 |
+|       }                                                                                                                                          |
+| 
+                                                                                                                                             |
+|       .topbar {                                                                                                                                  |
+|         margin-bottom: 28px;                                                                                                                     |
+|       }                                                                                                                                          |
+| 
+                                                                                                                                             |
+|       .brand-small {                                                                                                                             |
+|         font-size: 11px;                                                                                                                         |
+|       }                                                                                                                                          |
+| 
+                                                                                                                                             |
+|       .official-badge {                                                                                                                          |
+|         padding: 7px 10px;                                                                                                                       |
+|         font-size: 9px;                                                                                                                          |
+|       }                                                                                                                                          |
+| 
+                                                                                                                                             |
+|       .logo-box {                                                                                                                                |
+|         width: 120px;                                                                                                                            |
+|         height: 120px;                                                                                                                           |
+|         border-radius: 34px;                                                                                                                     |
+|       }                                                                                                                                          |
+| 
+                                                                                                                                             |
+|       .logo-box-inner {                                                                                                                          |
+|         border-radius: 28px;                                                                                                                     |
+|       }                                                                                                                                          |
+| 
+                                                                                                                                             |
+|       h1 {                                                                                                                                       |
+|         font-size: 42px;                                                                                                                         |
+|       }                                                                                                                                          |
+| 
+                                                                                                                                             |
+|       .subtitle {                                                                                                                                |
+|         font-size: 14px;                                                                                                                         |
+|       }                                                                                                                                          |
+| 
+                                                                                                                                             |
+|       .telegram-btn {                                                                                                                            |
+|         font-size: 15px;                                                                                                                         |
+|       }                                                                                                                                          |
+| 
+                                                                                                                                             |
+|       .stats {                                                                                                                                   |
+|         gap: 7px;                                                                                                                                |
+|       }                                                                                                                                          |
+| 
+                                                                                                                                             |
+|       .stat-card {                                                                                                                               |
+|         min-height: 72px;                                                                                                                        |
+|       }                                                                                                                                          |
+| 
+                                                                                                                                             |
+|       .section-title h2 {                                                                                                                        |
+|         font-size: 22px;                                                                                                                         |
+|       }                                                                                                                                          |
+| 
+                                                                                                                                             |
+|       .agency-inner h3 {                                                                                                                         |
+|         font-size: 23px;                                                                                                                         |
+|       }                                                                                                                                          |
+|     }                                                                                                                                            |
+|   </style>                                                                                                                                      |
+| </head>                                                                                                                                         |
+| 
+                                                                                                                                             |
+| <body>                                                                                                                                          |
+| 
+                                                                                                                                             |
+|   <main class="page">                                                                                                                           |
+| 
+                                                                                                                                             |
+|     <div class="container">                                                                                                                     |
+| 
+                                                                                                                                             |
+|       <!-- TOP -->                                                                                                                              |
+| 
+                                                                                                                                             |
+|       <div class="topbar">                                                                                                                      |
+| 
+                                                                                                                                             |
+|         <div class="brand-small">                                                                                                               |
+|           <span class="status-dot"></span>                                                                                                     |
+|           <span>Gujarati Trader</span>                                                                                                         |
+|         </div>                                                                                                                                  |
+| 
+                                                                                                                                             |
+|         <div class="official-badge">                                                                                                            |
+|           OFFICIAL                                                                                                                               |
+|         </div>                                                                                                                                  |
+| 
+                                                                                                                                             |
+|       </div>                                                                                                                                    |
+| 
+                                                                                                                                             |
+| 
+                                                                                                                                             |
+|       <!-- HERO -->                                                                                                                             |
+| 
+                                                                                                                                             |
+|       <section class="hero">                                                                                                                    |
+| 
+                                                                                                                                             |
+|         <div class="logo-box">                                                                                                                  |
+|           <div class="logo-box-inner">                                                                                                          |
+|             <img                                                                                                                                |
+|               src="https://growwvix.pro/wp-content/uploads/2026/08/images-2.jpg" |
+|               alt="Gujarati Trader Logo"                                                                                                         |
+|             />                                                                                                                                   |
+|           </div>                                                                                                                                |
+|         </div>                                                                                                                                  |
+| 
+                                                                                                                                             |
+|         <div class="eyebrow">                                                                                                                   |
+|           OFFICIAL COMMUNITY                                                                                                                     |
+|         </div>                                                                                                                                  |
+| 
+                                                                                                                                             |
+|         <h1>GUJARATI TRADER</h1>                                                                                                               |
+| 
+                                                                                                                                             |
+|         <p class="subtitle">                                                                                                                    |
+|           Join the official Telegram community and stay connected                                                                                |
+|           with important updates and community information.                                                                                      |
+|         </p>                                                                                                                                    |
+| 
+                                                                                                                                             |
+| 
+                                                                                                                                             |
+|         <!-- MAIN TELEGRAM BUTTON -->                                                                                                           |
+| 
+                                                                                                                                             |
+|         <a                                                                                                                                      |
+|           href="https://t.me/+zNhf6YbpN0g0Zjc1"                                                                |
+|           target="_blank"                                                                                                                       |
+|           rel="noopener noreferrer"                                                                                                              |
+|           class="telegram-btn"                                                                                                                   |
+|                                                                                                        |
+|         >                                                                                                                                        |
+|           <span class="telegram-icon">✈</span>                                                                                                 |
+|           Join Official Telegram                                                                                                                 |
+|         </a>                                                                                                                                    |
+| 
+                                                                                                                                             |
+|         <div class="one-tap">                                                                                                                   |
+|           One tap access • Official community                                                                                                    |
+|         </div>                                                                                                                                  |
+| 
+                                                                                                                                             |
+|       </section>                                                                                                                                |
+| 
+                                                                                                                                             |
+| 
+                                                                                                                                             |
+|       <!-- STATS -->                                                                                                                            |
+| 
+                                                                                                                                             |
+|       <section class="stats">                                                                                                                   |
+| 
+                                                                                                                                             |
+|         <div class="stat-card">                                                                                                                 |
+|           <div class="stat-number">24/7</div>                                                                                                  |
+|           <div class="stat-label">Access</div>                                                                                                 |
+|         </div>                                                                                                                                  |
+| 
+                                                                                                                                             |
+|         <div class="stat-card">                                                                                                                 |
+|           <div class="stat-number">⚡</div>                                                                                                     |
+|           <div class="stat-label">Updates</div>                                                                                                |
+|         </div>                                                                                                                                  |
+| 
+                                                                                                                                             |
+|         <div class="stat-card">                                                                                                                 |
+|           <div class="stat-number">✈</div>                                                                                                     |
+|           <div class="stat-label">Telegram</div>                                                                                               |
+|         </div>                                                                                                                                  |
+| 
+                                                                                                                                             |
+|       </section>                                                                                                                                |
+| 
+                                                                                                                                             |
+| 
+                                                                                                                                             |
+|       <!-- COMMUNITY SECTION -->                                                                                                                |
+| 
+                                                                                                                                             |
+|       <section>                                                                                                                                 |
+| 
+                                                                                                                                             |
+|         <div class="section-title">                                                                                                             |
+|           <h2>                                                                                                                                  |
+|             Stay connected.<br />                                                                                                               |
+|             <span>Join the community.</span>                                                                                                   |
+|           </h2>                                                                                                                                 |
+|         </div>                                                                                                                                  |
+| 
+                                                                                                                                             |
+| 
+                                                                                                                                             |
+|         <div class="features">                                                                                                                  |
+| 
+                                                                                                                                             |
+|           <div class="feature-card">                                                                                                            |
+| 
+                                                                                                                                             |
+|             <div class="feature-icon">                                                                                                          |
+|               📢                                                                                                                                 |
+|             </div>                                                                                                                              |
+| 
+                                                                                                                                             |
+|             <div class="feature-content">                                                                                                       |
+|               <h3>Latest Updates</h3>                                                                                                          |
+| 
+                                                                                                                                             |
+|               <p>                                                                                                                               |
+|                 Stay connected with important announcements                                                                                      |
+|                 and community updates.                                                                                                           |
+|               </p>                                                                                                                              |
+|             </div>                                                                                                                              |
+| 
+                                                                                                                                             |
+|           </div>                                                                                                                                |
+| 
+                                                                                                                                             |
+| 
+                                                                                                                                             |
+|           <div class="feature-card">                                                                                                            |
+| 
+                                                                                                                                             |
+|             <div class="feature-icon">                                                                                                          |
+|               👥                                                                                                                                 |
+|             </div>                                                                                                                              |
+| 
+                                                                                                                                             |
+|             <div class="feature-content">                                                                                                       |
+|               <h3>Official Community</h3>                                                                                                      |
+| 
+                                                                                                                                             |
+|               <p>                                                                                                                               |
+|                 Access the GUJARATI TRADER community through                                                                                     |
+|                 the official Telegram channel.                                                                                                   |
+|               </p>                                                                                                                              |
+|             </div>                                                                                                                              |
+| 
+                                                                                                                                             |
+|           </div>                                                                                                                                |
+| 
+                                                                                                                                             |
+| 
+                                                                                                                                             |
+|           <div class="feature-card">                                                                                                            |
+| 
+                                                                                                                                             |
+|             <div class="feature-icon">                                                                                                          |
+|               🚀                                                                                                                                 |
+|             </div>                                                                                                                              |
+| 
+                                                                                                                                             |
+|             <div class="feature-content">                                                                                                       |
+|               <h3>Instant Access</h3>                                                                                                          |
+| 
+                                                                                                                                             |
+|               <p>                                                                                                                               |
+|                 Open the official Telegram community directly                                                                                    |
+|                 with a single click.                                                                                                             |
+|               </p>                                                                                                                              |
+|             </div>                                                                                                                              |
+| 
+                                                                                                                                             |
+|           </div>                                                                                                                                |
+| 
+                                                                                                                                             |
+|         </div>                                                                                                                                  |
+| 
+                                                                                                                                             |
+| 
+                                                                                                                                             |
+|         <!-- SECOND CTA -->                                                                                                                     |
+| 
+                                                                                                                                             |
+|         <div class="cta-box">                                                                                                                   |
+| 
+                                                                                                                                             |
+|           <div class="cta-question">                                                                                                            |
+|             Ready to join the official GUJARATI TRADER community?                                                                                |
+|           </div>                                                                                                                                |
+| 
+                                                                                                                                             |
+|           <a                                                                                                                                    |
+|             href="https://t.me/+zNhf6YbpN0g0Zjc1"                                                              |
+|             target="_blank"                                                                                                                     |
+|             rel="noopener noreferrer"                                                                                                            |
+|             class="telegram-btn"                                                                                                                 |
+|                                                                                                      |
+|           >                                                                                                                                      |
+|             <span class="telegram-icon">✈</span>                                                                                               |
+|             Join Telegram Now                                                                                                                    |
+|           </a>                                                                                                                                  |
+| 
+                                                                                                                                             |
+|         </div>                                                                                                                                  |
+| 
+                                                                                                                                             |
+|       </section>                                                                                                                                |
+| 
+                                                                                                                                             |
+| 
+                                                                                                                                             |
+|       <!-- AGENCY CARD -->                                                                                                                      |
+| 
+                                                                                                                                             |
+|       <section class="agency-card">                                                                                                             |
+| 
+                                                                                                                                             |
+|         <div class="agency-inner">                                                                                                              |
+| 
+                                                                                                                                             |
+|           <div class="agency-label">                                                                                                            |
+|             ADS & GROWTH SUPPORT                                                                                                                 |
+|           </div>                                                                                                                                |
+| 
+                                                                                                                                             |
+|           <h3>                                                                                                                                  |
+|             Ads managed by<br />                                                                                                                |
+| 
+                                                                                                                                             |
+|             <span class="gradient-text">                                                                                                        |
+|               KirtiX Digital Agency                                                                                                              |
+|             </span>                                                                                                                             |
+|           </h3>                                                                                                                                 |
+| 
+                                                                                                                                             |
+|           <p>                                                                                                                                   |
+|             Professional growth support and                                                                                                      |
+|             digital marketing experiences.                                                                                                       |
+|           </p>                                                                                                                                  |
+| 
+                                                                                                                                             |
+|         </div>                                                                                                                                  |
+| 
+                                                                                                                                             |
+|       </section>                                                                                                                                |
+| 
+                                                                                                                                             |
+| 
+                                                                                                                                             |
+|       <!-- FOOTER -->                                                                                                                           |
+| 
+                                                                                                                                             |
+|       <footer>                                                                                                                                  |
+|         Official landing page • GUJARATI TRADER                                                                                                  |
+|       </footer>                                                                                                                                 |
+| 
+                                                                                                                                             |
+|     </div>                                                                                                                                      |
+| 
+                                                                                                                                             |
+|   </main>                                                                                                                                       |
+| 
+                                                                                                                                             |
+| </body>                                                                                                                                         |
+| </html>                                                                                                                                         |
+|                                                                                                                                                  |
